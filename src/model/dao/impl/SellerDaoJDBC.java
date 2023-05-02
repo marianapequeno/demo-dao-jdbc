@@ -107,8 +107,7 @@ public class SellerDaoJDBC implements SellerDao {
             rs = st.executeQuery();
             if (rs.next()) {
                 Department dep = instantiateDepartment(rs);
-                Seller obj = instantiateSeller(rs, dep);
-                return obj;
+                return instantiateSeller(rs, dep);
             }
             return null;
         } catch (SQLException e) {
